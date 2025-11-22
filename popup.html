@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pop Up</title>
+  <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+  <h1>Pop up page</h1>
+  <button>Fake btn</button>
+  <div id="pop-up">
+    <p>Accept the cookies preference for easy redirection on the next time you visit the page.</p>
+    <button class="btn">Accept terms & conditions</button>
+    <button class="cl-btn">Close</button>
+  </div>
+  <script>
+  const btn=document.querySelector('.btn')
+  const popup=document.getElementById('pop-up')
+  const close=document.querySelector('.cl-btn')
+  
+  if (localStorage.getItem('closepop')==='yes'){
+      popup.style.display='none'
+  }
+  btn.addEventListener('click', ()=>{
+    
+    popup.style.display='none';
+    localStorage.setItem('closepop','yes')
+  })
+  close.addEventListener('click', ()=>{
+    popup.style.display='none'
+  })
+  </script>
+</body>
+</html>
